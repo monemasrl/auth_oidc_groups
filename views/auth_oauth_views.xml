@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="view_oauth_provider_form" model="ir.ui.view">
+            <field name="name">auth.oauth.provider.form.groups_mapping</field>
+            <field name="model">auth.oauth.provider</field>
+            <field name="inherit_id" ref="auth_oauth.view_oauth_provider_form" />
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[last()]" position="after">
+                    <notebook>
+                        <page string="Groups Mapping">
+                            <group>
+                                <field name="only_oauth_groups" />
+                            </group>
+                            <group>
+                                <field name="group_mapping_ids" />
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>        
+</odoo>
